@@ -1,5 +1,6 @@
 <script>
 	import favicon from '$lib/assets/favicon.svg';
+	import { count } from '$lib/stores';
 </script>
 
 <svelte:head>
@@ -10,7 +11,10 @@
 <nav>
 	<a href="/">Home</a>
 	<a href="/about">About</a>
+	<a href="/blog/1">Blog 1</a>
 </nav>
+
+<p>전체 클릭 수 : {$count}</p>
 
 <slot />
 

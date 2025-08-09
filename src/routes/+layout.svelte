@@ -1,6 +1,8 @@
 <script>
+	import { page } from '$app/stores';
 	import favicon from '$lib/assets/favicon.svg';
 	import { count } from '$lib/stores';
+	import { fade } from 'svelte/transition';
 </script>
 
 <svelte:head>
@@ -16,9 +18,12 @@
 
 <p>전체 클릭 수 : {$count}</p>
 
-<slot />
-
-<!--여기에 각 페이지 내용을 넣음-->
+<!-- key 블록으로 page.url.pathname 기준으로 페이지 전환 감지 -->
+{#key $page.url.pathname}
+	<div in:fade={{ delay: 150, duration: 300 }} out:fade={{ duration: 150 }}>
+		<slot />
+	</div>
+{/key}
 
 <!-- 네비게이션 바에만 적용-->
 <style>

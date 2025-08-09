@@ -1,5 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+	export let data;
+</script>
+
+<h1>메인 페이지</h1>
+<p>서버에서 받은 메세지:{data.message}</p>
 
 <a href="/about">Go to about</a>
 

@@ -31,6 +31,7 @@
 	</div>
 
 	<footer class="post-footer">
+		<a href="/{data.post.id}/edit" class="btn btn-edit">수정하기</a>
 		<a href="/" class="btn btn-secondary">목록으로</a>
 	</footer>
 </article>
@@ -81,6 +82,15 @@
 		text-decoration: none;
 		font-weight: bold;
 		transition: background-color 0.2s;
+	}
+
+	.btn-edit {
+		background: #fb4b4b;
+		color: white;
+	}
+
+	.btn-edit:hover {
+		background: #ff2323;
 	}
 
 	.btn-secondary {

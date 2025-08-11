@@ -1,17 +1,39 @@
-# sv
+# 게시판 프로젝트
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+![alt text](<스크린샷 2025-08-11 141158-1.png>)
 
 ## Creating a project
 
 If you're seeing this, you've probably already done this step. Congrats!
 
-```sh
-# create a new project in the current directory
-npx sv create
+1. SvelteKit 프로젝트 생성
 
-# create a new project in my-app
-npx sv create my-app
+```bash
+npm create svelte@latest my-board
+cd my-board
+npm install
+```
+
+2. 필요한 패키지 설치
+
+```bash
+npm install @prisma/client prisma
+npm install --save-dev @types/node
+```
+
+3. 데이터베이스 설정 (Prisma 사용)
+
+- Prisma 초기화
+
+```bash
+npx prisma init --datasource-provider sqlite
+```
+
+- 데이터베이스 마이그레이션
+
+```bash
+npx prisma migrate dev --name init
+npx prisma generate
 ```
 
 ## Developing
